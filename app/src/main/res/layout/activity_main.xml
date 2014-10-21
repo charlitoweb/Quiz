@@ -28,12 +28,20 @@
         android:layout_below="@id/botonJugar"
         android:text="ACERCA DE..."
         />
+    <Button
+        android:id="@+id/botonEnviarPregunta"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/botonAcercaDe"
+        android:text="Envia tu pregunta!"
+        />
 
     <Button
         android:id="@+id/botonSalir"
         android:layout_width="@dimen/button_width"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/botonAcercaDe"
+        android:layout_below="@id/botonEnviarPregunta"
         android:text="SALIR"/>
 </RelativeLayout>

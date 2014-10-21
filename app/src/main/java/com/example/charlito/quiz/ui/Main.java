@@ -14,6 +14,7 @@ import com.example.charlito.quiz.R;
 public class Main extends Activity {
     protected Button mBotonJugar;
     protected Button mBotonAcercaDe;
+    protected Button mBotonEnviaPregunta;
     protected Button mBotonSalir;
 
     @Override
@@ -45,6 +46,13 @@ public class Main extends Activity {
                 // 3. Get the AlertDialog from create()
                 AlertDialog dialog = builder.create();
                 dialog.show();
+            }
+        });
+        mBotonEnviaPregunta = (Button)findViewById(R.id.botonEnviarPregunta);
+        mBotonEnviaPregunta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Main.this, SendMailActivity.class));
             }
         });
         mBotonSalir = (Button)findViewById(R.id.botonSalir);
