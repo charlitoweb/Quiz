@@ -39,14 +39,14 @@
 
     <Button
         android:id="@+id/salir"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="@string/salir"
+        android:layout_toEndOf="@+id/vida1"
+        android:layout_gravity="center"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_toRightOf="@+id/vida2"
-        android:text="@string/salir" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
      <ImageView
             android:id="@+id/vida1"
@@ -60,19 +60,23 @@
         android:id="@+id/vida2"
         android:layout_width="70dp"
         android:layout_height="62dp"
-        android:layout_marginLeft="116dp"
         android:maxHeight="25dp"
         android:maxWidth="25dp"
-        android:src="@drawable/vidaok" />
+        android:src="@drawable/vidaok"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/vida1"
+        android:layout_toEndOf="@+id/vida1" />
 
     <ImageView
         android:id="@+id/vida3"
         android:layout_width="67dp"
         android:layout_height="60dp"
-        android:layout_alignRight="@+id/salir"
         android:maxWidth="9dip"
         android:scaleType="centerCrop"
-        android:src="@drawable/vidaok" />
+        android:src="@drawable/vidaok"
+        android:layout_alignBottom="@+id/vida2"
+        android:layout_toRightOf="@+id/vida2"
+        android:layout_toEndOf="@+id/vida2" />
 
     <TextView
         android:id="@+id/pregunta"
