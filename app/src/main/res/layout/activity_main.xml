@@ -1,0 +1,39 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Main">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:scaleType="fitXY" />
+
+    <Button
+        android:id="@+id/botonJugar"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:text="JUGAR"/>
+
+    <Button
+        android:id="@+id/botonAcercaDe"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/botonJugar"
+        android:text="ACERCA DE..."
+        />
+
+    <Button
+        android:id="@+id/botonSalir"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/botonAcercaDe"
+        android:text="SALIR"/>
+</RelativeLayout>

@@ -1,0 +1,100 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="30dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginTop="10dp"
+    tools:context="com.charlito.preguntasfreak.MainActivity" >
+
+    <Button
+        android:id="@+id/opcion1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/opcion2"
+        android:layout_alignParentLeft="true"
+        android:text="@string/opcion1" />
+    <Button
+        android:id="@+id/opcion2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/opcion3"
+        android:layout_alignParentLeft="true"
+        android:text="@string/opcion2" />
+    <Button
+        android:id="@+id/opcion3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/opcion4"
+        android:layout_alignParentLeft="true"
+        android:text="@string/opcion3" />
+    <Button
+        android:id="@+id/opcion4"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/salir"
+        android:layout_alignParentLeft="true"
+        android:text="@string/opcion4" />
+
+    <Button
+        android:id="@+id/salir"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@+id/vida2"
+        android:text="@string/salir" />
+
+     <ImageView
+            android:id="@+id/vida1"
+            android:layout_width="71dp"
+            android:layout_height="63dp"
+            android:maxHeight="25dp"
+            android:maxWidth="25dp"
+            android:src="@drawable/vidaok" />
+
+    <ImageView
+        android:id="@+id/vida2"
+        android:layout_width="70dp"
+        android:layout_height="62dp"
+        android:layout_marginLeft="116dp"
+        android:maxHeight="25dp"
+        android:maxWidth="25dp"
+        android:src="@drawable/vidaok" />
+
+    <ImageView
+        android:id="@+id/vida3"
+        android:layout_width="67dp"
+        android:layout_height="60dp"
+        android:layout_alignRight="@+id/salir"
+        android:maxWidth="9dip"
+        android:scaleType="centerCrop"
+        android:src="@drawable/vidaok" />
+
+    <TextView
+        android:id="@+id/pregunta"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/vida2"
+        android:layout_marginTop="65dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:text="@string/pregunta"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/vida2"
+        android:layout_marginTop="26dp"
+        android:max="100"
+        android:progress="50" />
+
+</RelativeLayout>

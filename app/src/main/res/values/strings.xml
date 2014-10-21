@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Quiz</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_preguntas">Preguntas</string>
+    <string name="pregunta">pregunta</string>
+    <string name="opcion1">opcion1</string>
+    <string name="opcion2">opcion2</string>
+    <string name="opcion3">opcion3</string>
+    <string name="opcion4">opcion4</string>
+    <string name="salir">Salir</string>
+    <string name="dialog_message">Creado por Hector, Varela y Carlos</string>
+    <string name="dialog_title">Acerca de...</string>
+
+</resources>
