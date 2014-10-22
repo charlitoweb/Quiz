@@ -30,6 +30,8 @@ public class Preguntas extends Activity {
     protected PreguntasModelo mPreguntasModelo;
     private MediaPlayer sonidook,sonidoko,tiempo;
     int numVidas=3;
+    int vidaExtra = 0;// cuando llegue a 10 se añade una vida y se pone a 0
+    int puntos = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -113,7 +115,22 @@ public class Preguntas extends Activity {
         if (mPreguntasModelo.esCorrecta(correcta2)){
             Toast.makeText(getApplicationContext(), "Respuesta correcta",
                     Toast.LENGTH_SHORT).show();
+            vidaExtra = vidaExtra + 1;
+            puntos = puntos + 10;
             if (mPreguntasModelo.noesUltimaPregunta()){
+                if (vidaExtra > 9){
+                    if (numVidas <3) {
+                        numVidas = numVidas + 1;
+                        Toast.makeText(getApplicationContext(), "VIDA EXTRA!!",
+                                Toast.LENGTH_SHORT).show();
+                    }
+                    if (numVidas == 3){
+                        vida3.setImageResource(R.drawable.vidaok);
+                    }else{
+                        vida2.setImageResource(R.drawable.vidaok);
+                    }
+                    vidaExtra = 0;
+                }
                 cargarPregunta();
                 sonidook = MediaPlayer.create(this, R.raw.ok);
                 sonidook.start();
@@ -122,7 +139,7 @@ public class Preguntas extends Activity {
                         Toast.LENGTH_SHORT).show();
                 tiempo = MediaPlayer.create(this, R.raw.tiempo);
                 tiempo.start();
-                pregunta.setText("FELICIDADES HAS LLEGADO AL FINAL");
+                pregunta.setText("FELICIDADES HAS LLEGADO AL FINAL, HAS HECHO "+puntos + " PUNTOS");
                 ocultarBotones();
             }
         }else{
@@ -136,7 +153,7 @@ public class Preguntas extends Activity {
             }
             if (numVidas == 0){
                 vida1.setImageResource(R.drawable.vidako);
-                pregunta.setText("LO SENTIMOS NO LE QUEDAN MAS VIDAS");
+                pregunta.setText("LO SENTIMOS NO TE QUEDAN MAS VIDAS, HAS HECHO "+puntos + " PUNTOS");
                 sonidoko.setVolume(1,1);
                 sonidoko.start();
                 ocultarBotones();
