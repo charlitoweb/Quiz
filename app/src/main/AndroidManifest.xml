@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.charlito.quiz" >
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -12,7 +12,7 @@
         <activity
             android:name=".ui.Main"
             android:label="@string/app_name"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,7 +23,7 @@
             android:name=".ui.Preguntas"
             android:label="@string/title_activity_preguntas"
             android:parentActivityName=".ui.Main"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.charlito.quiz.Main" />
@@ -32,10 +32,19 @@
             android:name=".ui.SendMailActivity"
             android:label="@string/title_activity_send_mail"
             android:parentActivityName=".ui.Main"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.charlito.quiz.Main" />
+        </activity>
+        <activity
+            android:name=".ui.Puntuaciones"
+            android:label="@string/title_activity_puntuaciones"
+            android:parentActivityName=".ui.Main"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.charlito.quiz.Main" />>
         </activity>
     </application>
 

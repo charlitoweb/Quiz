@@ -15,6 +15,7 @@ public class Main extends Activity {
     protected Button mBotonJugar;
     protected Button mBotonAcercaDe;
     protected Button mBotonEnviaPregunta;
+    protected Button mPuntuaciones;
     protected Button mBotonSalir;
 
     @Override
@@ -53,6 +54,13 @@ public class Main extends Activity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(Main.this, SendMailActivity.class));
+            }
+        });
+        mPuntuaciones = (Button)findViewById(R.id.puntuaciones);
+        mPuntuaciones.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Main.this, Puntuaciones.class));
             }
         });
         mBotonSalir = (Button)findViewById(R.id.botonSalir);

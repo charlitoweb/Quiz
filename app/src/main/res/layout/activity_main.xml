@@ -44,10 +44,19 @@
         android:layout_centerHorizontal="true" />
 
     <Button
+        android:id="@+id/puntuaciones"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/botonEnviarPregunta"
+        android:text="Puntuaciones"
+        />
+
+    <Button
         android:id="@+id/botonSalir"
         android:layout_width="@dimen/button_width"
         android:layout_height="wrap_content"
         android:text="SALIR"
-        android:layout_below="@+id/botonEnviarPregunta"
+        android:layout_below="@+id/puntuaciones"
         android:layout_centerHorizontal="true" />
 </RelativeLayout>

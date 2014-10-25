@@ -14,5 +14,7 @@
     <string name="salir">Salir</string>
     <string name="dialog_message">Creado por Hector, Varela y Carlos</string>
     <string name="dialog_title">Acerca de...</string>
+    <string name="title_activity_puntuaciones">Puntuaciones</string>
+    <string name="puntuaciones">PUNTUACIONES</string>
 
 </resources>
