@@ -86,11 +86,14 @@
         android:text="Respuesta correcta"
         />
 
-    <EditText
+    <!--<EditText
         android:id="@+id/opcionVerdaderaText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="5dp"/>
+        android:padding="5dp"/>-->
+    <Spinner android:id="@+id/CmbOpciones"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
