@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.charlito.quiz.R;
 import com.example.charlito.quiz.mail.SendMailTask;
@@ -36,7 +37,8 @@ public class SendMailActivity extends Activity {
         final ArrayAdapter<CharSequence> adapter =
                 ArrayAdapter.createFromResource(this,R.array.valores_pregunta_correcta,android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(
-                android.R.layout.simple_spinner_dropdown_item);//Enlazamos nuestro spinner
+                android.R.layout.simple_spinner_dropdown_item);
+        //Enlazamos nuestro spinner
         cmbOpciones = (Spinner)findViewById(R.id.CmbOpciones);
         adapter.setDropDownViewResource(
                 android.R.layout.simple_spinner_dropdown_item);
@@ -76,34 +78,47 @@ public class SendMailActivity extends Activity {
                 opcion4Text = (TextView) findViewById(R.id.opcion4Text);
                 //opcionVerdaderaText = (TextView) findViewById(R.id.opcionVerdaderaText);
 
-
-
-
-
-
-
-                String emailBody = "Pregunta: "+preguntaText.getText().toString();
-                emailBody = emailBody + "<br>Opcion 1: " +opcion1Text.getText().toString();
-                emailBody = emailBody + "<br>Opcion 2: " +opcion2Text.getText().toString();
-                emailBody = emailBody + "<br>Opcion 3: " +opcion3Text.getText().toString();
-                emailBody = emailBody + "<br>Opcion 4: " +opcion4Text.getText().toString();
-                /*String verd = CmbOpciones.getText().toString();
-                if (verd == "Opcion 1"){
-                    verd = "1";
-                }else if(verd == "Opcion 2"){
-                    verd = "2";
-                }else if (verd == "Opcion 3"){
-                    verd = "3";
+                if (validarCampos()) {
+                    String emailBody = "Pregunta: " + preguntaText.getText().toString();
+                    emailBody = emailBody + "<br>Opcion 1: " + opcion1Text.getText().toString();
+                    emailBody = emailBody + "<br>Opcion 2: " + opcion2Text.getText().toString();
+                    emailBody = emailBody + "<br>Opcion 3: " + opcion3Text.getText().toString();
+                    emailBody = emailBody + "<br>Opcion 4: " + opcion4Text.getText().toString();
+                    /*String verd = CmbOpciones.getText().toString();
+                    if (verd == "Opcion 1"){
+                        verd = "1";
+                    }else if(verd == "Opcion 2"){
+                        verd = "2";
+                    }else if (verd == "Opcion 3"){
+                        verd = "3";
+                    }else{
+                        verd = "4";
+                    }*/
+                    emailBody = emailBody + "<br>Opcion Correcta: " + verd;
+                    new SendMailTask(SendMailActivity.this).execute(fromEmail,
+                            fromPassword, toEmailList, "nueva pregunta de Preguntas Freak", emailBody);
+                    borraDatos();
                 }else{
-                    verd = "4";
-                }*/
-                emailBody = emailBody + "<br>Opcion Correcta: " +verd;
-                new SendMailTask(SendMailActivity.this).execute(fromEmail,
-                        fromPassword, toEmailList, "nueva pregunta de Preguntas Freak", emailBody);
-                borraDatos();
+                    Toast.makeText(getApplicationContext(), "Debes rellenar todos los campos", Toast.LENGTH_SHORT).show();
+                }
 			}
 		});
 	}
+
+    private boolean validarCampos() {
+        if (preguntaText.getText().toString().equals("")){
+            return false;
+        }else if (opcion1Text.getText().toString().equals("")){
+            return false;
+        }else if (opcion2Text.getText().toString().equals("")){
+            return false;
+        }else if (opcion3Text.getText().toString().equals("")){
+            return false;
+        }else if (opcion4Text.getText().toString().equals("")){
+            return false;
+        }
+        return true;
+    }
 
     private void borraDatos() {
         preguntaText.setText("");
